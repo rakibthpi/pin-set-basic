@@ -27,5 +27,18 @@ document.getElementById('keyPade').addEventListener('click', function(event){
 });
 // Submit btn work 
 document.getElementById('submit').addEventListener('click', function (){
-    console.log("Successfull!");
+    const matchNumber = document.getElementById('pinInput').value;
+    const typeNumber = document.getElementById('showInput').value;
+
+    // Reight and wrong pin code 
+    const wrongPin = document.getElementById('wrongPin');
+    const reightPin = document.getElementById('rightPin');
+    if(matchNumber == typeNumber){
+        reightPin.style.display = 'block';
+        wrongPin.style.display = 'none';
+    }
+    else{
+        wrongPin.style.display = 'block';
+        reightPin.style.display = 'none';
+    }
 });
